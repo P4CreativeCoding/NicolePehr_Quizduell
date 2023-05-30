@@ -1,1 +1,3 @@
 # NicolePehr_Quizduell
+
+Das Quiz wurde bisher vollständig mit ChatGPT gecoded, um den Service mal auszuprobieren. Wie weit kann man gehen? Was muss beachtet werden? Was fällt auf?....

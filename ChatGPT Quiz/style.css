@@ -1,0 +1,18 @@
+/* styles.css */
+
+.quiz-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #ff9e80;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+    background-color: #ff7f50;
+}

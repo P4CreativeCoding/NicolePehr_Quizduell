@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz für zwei Spieler</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f6f6f9;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .quiz-container {
+                max-width: 500px;
+                margin: 0 auto;
+                background-color: #fff8e7;
+                border-radius: 5px;
+                padding: 20px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+                color: #5d5d5d;
+            }
+
+            .start-button {
+                display: block;
+                margin: 0 auto;
+                padding: 10px 20px;
+                background-color: #f78888;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+
+            .start-button:hover {
+                background-color: #e47f7f;
+            }
+
+            .results-container {
+                margin-top: 20px;
+                text-align: center;
+                color: #5d5d5d;
+            }
+        </style>
+        <script src="quiz.js"></script>
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h1>Quiz für zwei Spieler</h1>
+            <button class="start-button" onclick="startQuiz()">
+                Quiz starten
+            </button>
+            <div class="results-container" style="display: none"></div>
+        </div>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Benutzername:</label>
+            <input type="text" id="username" required /><br /><br />
+
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" required /><br /><br />
+
+            <input type="submit" value="Einloggen" />
+        </form>
+        <script>
+            // Hier kannst du zusätzlichen JavaScript-Code einfügen, falls gewünscht
+        </script>
+    </body>
+</html>
