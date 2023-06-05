@@ -1,4 +1,4 @@
-// Benutzerdaten
+/*// Benutzerdaten
 const benutzername = "admin";
 const passwort = "geheim123";
 
@@ -19,10 +19,10 @@ function autorisieren(e) {
         console.log("Autorisierung fehlgeschlagen");
         // Hier kannst du den Code ausführen, der bei fehlgeschlagener Autorisierung ausgeführt werden soll
     }
-}
+}*/
 
 // Eventlistener für das Formular
-document.getElementById("loginForm").addEventListener("submit", autorisieren);
+//document.getElementById("loginForm").addEventListener("submit", autorisieren);
 
 // Fragen und Antworten
 var fragen = [
@@ -94,6 +94,8 @@ function zeigeErgebnisse() {
             " Punkte"
     );
 }
-
-// Start des Quiz
-startQuiz();
+socket.on("Quizstarted", () => {
+    //wartet auf Event (2 Leute da), bekommts vom Server geschickt
+    startQuiz();
+    console.log("Quiz started");
+});

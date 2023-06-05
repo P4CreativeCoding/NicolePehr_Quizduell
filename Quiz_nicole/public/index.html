@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Quiz für zwei Spieler</title>
+        <title>krassestes Quizduell</title>
         <link rel="stylesheet" href="styles.css" />
         <style>
             body {
@@ -47,17 +47,16 @@
                 color: #5d5d5d;
             }
         </style>
-        <script src="quiz.js"></script>
     </head>
     <body>
         <div class="quiz-container">
-            <h1>Quiz für zwei Spieler</h1>
+            <h1>Mega krasses Quizduell für Hochbegabte</h1>
             <button class="start-button" onclick="startQuiz()">
-                Quiz starten
+                Let's goooo
             </button>
             <div class="results-container" style="display: none"></div>
         </div>
-        <h2>Login</h2>
+        <!-- <h2>Login</h2>
         <form id="loginForm">
             <label for="username">Benutzername:</label>
             <input type="text" id="username" required /><br /><br />
@@ -66,9 +65,18 @@
             <input type="password" id="password" required /><br /><br />
 
             <input type="submit" value="Einloggen" />
-        </form>
+        </form> -->
+        <!-- user holt sich Info wie socket.io funktioniert (Internet: service cloudflare)
+        script-tag: verbinde dich mit dem socket -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.2/socket.io.js"
+            integrity="sha512-jMNwWSmjje4fjYut9MBGKXw5FZA6D67NHAuC9szpjbbjg51KefquNfvn4DalCbGfkcv/jHsHnPo1o47+8u4biA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
         <script>
-            // Hier kannst du zusätzlichen JavaScript-Code einfügen, falls gewünscht
+            const socket = io();
         </script>
+        <script src="quiz.js"></script>
     </body>
 </html>
