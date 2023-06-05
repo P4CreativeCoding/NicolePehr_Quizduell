@@ -34,7 +34,7 @@ var fragen = [
     {
         frage: "Was ist die Hauptstadt von Frankreich?",
         antworten: ["A) Paris", "B) London", "C) Rom"],
-        korrekteAntwort: 0,
+        korrekteAntwort: 1,
     },
     {
         frage: "Wer hat die Relativitätstheorie entwickelt?",
