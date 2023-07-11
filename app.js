@@ -8,6 +8,7 @@ app.use(express.static(__dirname + "/public")); //express gibt an wo Frontend li
 let players = [];
 
 io.on("connection", (socket) => {
+// if (password !== env.process.PASSWORD) return;
   //socket.io merkt, wenn sich jemand verbindet und übermittelt es uns
   console.log("user connected");
   players.push({ id: socket.id, points: 0 }); //sobald neuer user sich verbindet, bekommt er einzigartige ID (ID wird immmer mitgeschickt)

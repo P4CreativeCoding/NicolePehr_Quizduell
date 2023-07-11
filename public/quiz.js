@@ -1,40 +1,14 @@
-/*// Benutzerdaten
-const benutzername = "admin";
-const passwort = "geheim123";
-
-// Funktion zur Autorisierung
-function autorisieren(e) {
-    e.preventDefault(); // Formular-Standardaktion verhindern
-
-    const eingegebenerBenutzername = document.getElementById("username").value;
-    const eingegebenesPasswort = document.getElementById("password").value;
-
-    if (
-        eingegebenerBenutzername === benutzername &&
-        eingegebenesPasswort === passwort
-    ) {
-        console.log("Autorisierung erfolgreich");
-        // Hier kannst du den Code ausführen, der nach erfolgreicher Autorisierung ausgeführt werden soll
-    } else {
-        console.log("Autorisierung fehlgeschlagen");
-        // Hier kannst du den Code ausführen, der bei fehlgeschlagener Autorisierung ausgeführt werden soll
-    }
-}*/
-
-// Eventlistener für das Formular
-//document.getElementById("loginForm").addEventListener("submit", autorisieren);
-
 // Fragen und Antworten
 var fragen = [
     {
         frage: "Wie viele Planeten hat unser Sonnensystem?",
         antworten: ["A) 7", "B) 8", "C) 9"],
-        korrekteAntwort: 1,
+        korrekteAntwort: "B",
     },
     {
         frage: "Was ist die Hauptstadt von Frankreich?",
         antworten: ["A) Paris", "B) London", "C) Rom"],
-        korrekteAntwort: 1,
+        korrekteAntwort: "A",
     },
     {
         frage: "Wer hat die Relativitätstheorie entwickelt?",
@@ -43,7 +17,7 @@ var fragen = [
             "B) Albert Einstein",
             "C) Galileo Galilei",
         ],
-        korrekteAntwort: 1,
+        korrekteAntwort: "B",
     },
 ];
 
