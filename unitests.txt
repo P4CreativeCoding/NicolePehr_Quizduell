@@ -1,0 +1,92 @@
+Hier sind meine fünf Unit Tests drinne. Diese habe ich von ChatGPT. Jedoch haben sie mir meinen Code kaputt gemachen, deswegen lade ich sie jetzt in einer seperaten Textdatei hoch.
+
+1. Teste die Authentifizierungsfunktion mit einem korrekten Passwort:
+
+const assert = require('assert');
+const io = require('socket.io-client');
+const socketURL = 'http://localhost:3000';
+
+describe('Authentication', function () {
+  it('should authenticate with correct password', function (done) {
+    const socket = io.connect(socketURL);
+    socket.on('logged in', function () {
+      assert.ok(true);
+      socket.disconnect();
+      done();
+    });
+    socket.emit('authentication', 'correct_password');
+  });
+});
+
+
+2. Teste die Authentifizierungsfunktion mit einem falschen Passwort:
+
+const assert = require('assert');
+const io = require('socket.io-client');
+const socketURL = 'http://localhost:3000';
+
+describe('Authentication', function () {
+  it('should fail authentication with incorrect password', function (done) {
+    const socket = io.connect(socketURL);
+    socket.on('authentication failed', function () {
+      assert.ok(true);
+      socket.disconnect();
+      done();
+    });
+    socket.emit('authentication', 'incorrect_password');
+  });
+});
+
+3. Teste den "connection"-Event, wenn ein Benutzer verbunden ist:
+
+const assert = require('assert');
+const io = require('socket.io-client');
+const socketURL = 'http://localhost:3000';
+
+describe('Connection', function () {
+  it('should emit "user connected" event', function (done) {
+    const socket = io.connect(socketURL);
+    socket.on('user connected', function () {
+      assert.ok(true);
+      socket.disconnect();
+      done();
+    });
+  });
+});
+
+4. Teste den "disconnect"-Event, wenn ein Benutzer die Verbindung trennt:
+
+const assert = require('assert');
+const io = require('socket.io-client');
+const socketURL = 'http://localhost:3000';
+
+describe('Disconnection', function () {
+  it('should emit "user disconnected" event', function (done) {
+    const socket = io.connect(socketURL);
+    socket.on('user disconnected', function () {
+      assert.ok(true);
+      socket.disconnect();
+      done();
+    });
+    socket.disconnect();
+  });
+});
+
+5. Teste den "Quizstarted"-Event, wenn zwei Benutzer verbunden sind:
+
+const assert = require('assert');
+const io = require('socket.io-client');
+const socketURL = 'http://localhost:3000';
+
+describe('Game Start', function () {
+  it('should emit "Quizstarted" event when two players are connected', function (done) {
+    const socket1 = io.connect(socketURL);
+    const socket2 = io.connect(socketURL);
+    socket1.on('Quizstarted', function () {
+      assert.ok(true);
+      socket1.disconnect();
+      socket2.disconnect();
+      done();
+    });
+  });
+});

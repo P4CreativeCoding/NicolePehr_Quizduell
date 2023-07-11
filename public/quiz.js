@@ -1,3 +1,27 @@
+//CLIENT-SEITE
+
+// Passwort Authentifikation
+const passwordInput = document.getElementById("passwordInput");
+const passwordButton = document.getElementById("passwordButton");
+
+passwordButton.addEventListener("click", () => {
+    const password = passwordInput.value; //speichert Wert der in das Feld eingegeben wurde
+    socket.emit("authentication", password); //Event = authentication, password = welche Daten werden mitgegeben
+});
+
+socket.on("logged in", (data) => {
+    if (data[0] === socket.id) {
+        document.body.insertAdjacentHTML("afterbegin", data[1]); //erst dann HTML zu CLient, wenn richtiges Passwort, HTML auf Server erst, dann zu CLient schicken
+        console.log("logged in successfully");
+
+        socket.on("Quizstarted", () => {
+            //wartet auf Event (2 Leute da), bekommts vom Server geschickt
+            startQuiz();
+            console.log("Quiz started");
+        });
+    }
+});
+
 // Fragen und Antworten
 var fragen = [
     {
@@ -68,8 +92,3 @@ function zeigeErgebnisse() {
             " Punkte"
     );
 }
-socket.on("Quizstarted", () => {
-    //wartet auf Event (2 Leute da), bekommts vom Server geschickt
-    startQuiz();
-    console.log("Quiz started");
-});
